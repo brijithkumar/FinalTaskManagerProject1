@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+.parenttask-input-style{
+    border: none;
+    border-color: transparent;
+
+}
+.parenttask-input-style:focus{
+    outline-color:transparent;
+    border-top: 1px solid #ced4da;
+    border-left: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+::-webkit-input-placeholder {
+    color:transparent;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    color:transparent; 
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    color:transparent; 
+ }
+ 
+ :-ms-input-placeholder {  
+    color:transparent;
+ }
+
+ .uppercase{
+     text-transform: uppercase;
+ }

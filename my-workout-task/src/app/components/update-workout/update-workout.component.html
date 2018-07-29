@@ -1,0 +1,61 @@
+
+<form [formGroup]="myupdateForm" (ngSubmit)="onSubmit()">
+    <!--<div formGroupName="workOut">-->
+        <div class="form-group">
+            <label for="task">Task</label>
+            <input formControlName="task" 
+            class="form-control col-sm-6 uppercase"  id="task"
+            name="task">
+            <small *ngIf="!myupdateForm.controls['task'].valid">
+                Task is required!!</small>
+          </div>
+          
+          <div class="form-group">
+            <label for="priority">Priority</label>
+           <div class="slidecontainer">
+              <input type="range" min="1" max="30" value="20" 
+              class="slider col-sm-6" id="myRange" formControlName="priority">
+            </div>
+            <small *ngIf="!myupdateForm.
+            controls['priority'].valid">Priority is required!!</small> 
+          </div> 
+          
+          <div class="form-group">
+            <label for="parentTask">Parent task</label>
+            <div>
+              
+             <input autocomplete [items]="results" formControlName="parentTask" [(ngModel)]="this.parentTaskModel" 
+              (inputChangedEvent)="search()" class="form-control input-parenttask-width uppercase"
+              (selectEvent)="onSelect($event)"  id="parentTask" 
+              name="parentTask"/> 
+          
+            </div>
+          </div>
+            
+                <div class="form-group">
+                    <label for="startDate">Start date</label>
+                    <input  formControlName="startDate" 
+                    class="form-control col-sm-6"  id="startDate"
+                    name="startDate" placeholder="dd-mm-yyyy">
+                    <small *ngIf="!myupdateForm.
+                    controls['startDate'].valid">Start date is required!!</small> 
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="endDate">End date</label>
+                    <input formControlName="endDate" 
+                    class="form-control col-sm-6"  id="endDate"
+                    name="endDate" placeholder="dd-mm-yyyy"> 
+                    <small *ngIf="!myupdateForm.
+                    controls['endDate'].valid">End date is required!!</small>
+                    </div>
+           
+   <!-- </div>-->
+      
+      <button type="submit" id="updateTask" class="btn btn-primary" [disabled]="!myupdateForm.valid">Update</button>
+      <button type="button" id="cancelTask" class="btn btn-default" (click)="onCancel();">Cancel</button>
+    </form>
+<br/>
+    <div *ngIf="statusCode === 200" [ngClass] = "'success'">
+        Article updated successfully.
+      </div> 

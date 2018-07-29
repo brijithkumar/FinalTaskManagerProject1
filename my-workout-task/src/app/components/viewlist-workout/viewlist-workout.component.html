@@ -1,0 +1,80 @@
+
+
+<div class="form-group row">
+    <label for="task" class="col-form-label">Task</label>
+    <div class="col-sm-5">
+     
+      <input type="search" [(ngModel)]="taskSearch" class="form-control"/>
+    </div>
+    <label for="parentTask" class="col-form-label">Parent task</label>
+    <div class="col-sm-5">
+    
+     <input type="search" [(ngModel)]="parentTaskSearch" class="form-control"/>
+    </div>
+  </div>
+
+  <div class="form-group row">
+      <label for="priortyFrom" class="col-form-label">Priorty from</label>
+      <div class="col-sm-2">
+        <input type="search"   [(ngModel)]="priorityFromSearch"
+        class="form-control" id="priortyFrom" />
+      </div>
+    
+      <label for="priortyTo" class="col-form-label">Priorty to</label>
+      <div class="col-sm-2">
+        <input type="search"  [(ngModel)]="priorityToSearch"
+        class="form-control" id="priortyTo" />
+      </div>
+
+      <label for="startDate" class="col-form-label">Start date</label>
+      <div class="col-sm-2">
+        <input type="search"  [(ngModel)]="startDateSearch"
+        class="form-control" id="startDate" />
+      </div>
+    
+      <label for="endDate" class=" col-form-label">End date</label>
+      <div class="col-sm-2">
+        <input type="search" [(ngModel)]="endDateSearch"
+         class="form-control" id="endDate" />
+      </div>
+
+    </div> 
+
+
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Parent task</th>
+        <th>Priority</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let workout of workouts | 
+            searchtasks: taskSearch:parentTaskSearch:priorityFromSearch:
+            priorityToSearch:startDateSearch:endDateSearch">
+                <td>{{workout.task}}</td>
+                <td>{{workout.parentTask}}</td>
+                <td>{{workout.priority}}</td>
+                <td>{{workout.startDate}}</td>
+                <td>{{workout.endDate}}</td>
+                <td><button type="submit"  [disabled]="this.workout.endTask" 
+                  (click)="editTask(workout);false">Edit</button></td>
+                <td><button type="submit"  [disabled]="this.workout.endTask" 
+                    (click)="endTask(workout.id);false">End Task</button></td>
+              </tr>
+    </tbody>
+</table>
+
+<div *ngIf="statusCode === 204" [ngClass] = "'success'">
+  Article deleted successfully.
+</div> 
+
+
+
+

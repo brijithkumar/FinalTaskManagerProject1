@@ -1,0 +1,8 @@
+com.taskmanager
+com.taskmanager.controller
+com.taskmanager.entities
+com.taskmanager.repository
+com.taskmanager.services
+com.taskmanager.taskmanager
+com.taskmanager.ui
+com.taskmanager.utility

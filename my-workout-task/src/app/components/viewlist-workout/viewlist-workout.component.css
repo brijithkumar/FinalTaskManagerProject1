@@ -1,0 +1,41 @@
+.searchLabel-right-Padding{
+    padding-right: 60px;
+}
+.searchLabel-parentTask{
+    padding-right: 30px;
+}
+.searchlabel-task{
+    flex: 0 0 36.333333%;
+    max-width: 36.333333%;
+    margin-right: 49px;
+}
+.searchlabel-parentTask{
+    flex: 0 0 36.333333%;
+    max-width: 36.333333%;
+    
+}
+.searchlabel-priorityFrom{
+    width: 97px;
+}
+.searchlabel-priorityFrom-inputBox{
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 14.667%;
+    max-width: 14.667%;
+    padding-left: 13px;
+    padding-right: 10px;
+}
+.searchlabel-priorityTo{
+    width: 78px;
+}
+.searchlabel-priorityTo-inputBox{
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 11.667%;
+    max-width: 14.667%;
+    
+    padding-right: 10px;
+}
+.searchlabel-startDate{
+    margin-left: 60px;
+}
